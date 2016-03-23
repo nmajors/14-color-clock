@@ -3,6 +3,7 @@ setInterval(function() {
   var hours = date.getHours();
   var minutes = date.getMinutes();
   var seconds = date.getSeconds();
+  console.log(seconds/60);
 
   var formattedCurrentTime = padNumber(hours) + ":" +
     padNumber(minutes) + ":" +
@@ -17,3 +18,6 @@ function padNumber(value) {
   }
   return value;
 }
+// var date = new Date();
+// var seconds=date.getSeconds();
+// console.log(seconds/60);
