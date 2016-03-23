@@ -1,6 +1,7 @@
 body {
   margin: 0 auto;
-  font-family: Arial, sans-serif; }
+  font-family: Arial, sans-serif;
+  color: white; }
 
 .container {
   min-width: 500px;
@@ -10,7 +11,7 @@ body {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  background-color: #aaa; }
+  background-color: #66A8A1; }
 
 #clock {
   position: fixed;
@@ -20,9 +21,28 @@ body {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
 
+.timerBarWidth {
+  width: 400px;
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  height: 3px;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+#timerBar {
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  height: 100%;
+  background-color: white;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
 body {
   margin: 0 auto;
-  font-family: Arial, sans-serif; }
+  font-family: Arial, sans-serif;
+  color: white; }
 
 .container {
   min-width: 500px;
@@ -32,12 +52,30 @@ body {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  background-color: #aaa; }
+  background-color: #66A8A1; }
 
 #clock {
   position: fixed;
   top: 50%;
   left: 50%;
   font-size: 5rem;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.timerBarWidth {
+  width: 400px;
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  height: 3px;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+#timerBar {
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  height: 100%;
+  background-color: white;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
