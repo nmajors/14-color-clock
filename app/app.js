@@ -1,17 +1,19 @@
-setInterval(function(){
-  console.log(new Date());
+setInterval(function() {
+  var date = new Date();
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var seconds = date.getSeconds();
+
+  var formattedCurrentTime = padNumber(hours) + ":" +
+    padNumber(minutes) + ":" +
+    padNumber(seconds);
+  document.querySelector("#clock").innerHTML = formattedCurrentTime;
 }, 1000);
 
-function padNumber(number){
-   if (number.toString.length===1);
-   return "0"+number;
+
+function padNumber(value) {
+  if (value.toString().length === 1) {
+    value = "0" + value;
+  }
+  return value;
 }
-
-date = new Date();
- hours = date.getHours();
- minutes = date.getMinutes();
- seconds = date.getSeconds();
-
- currentTime = hours+":"+minutes+":"+seconds;
-
-document.querySelector("#clock").innerHTML="currentTime";
