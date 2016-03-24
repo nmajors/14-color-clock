@@ -1,40 +1,60 @@
 setInterval(function() {
-  var date = new Date();
-  var hours = date.getHours();
-  var minutes = date.getMinutes();
-  var seconds = date.getSeconds();
+  const date = new Date();
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  const seconds = date.getSeconds();
 
-  var hexHours = padNumber(hours.toString(16));
-  var hexMinutes = padNumber(minutes.toString(16));
-  var hexSeconds = padNumber(seconds.toString(16));
-
-  var hexTime = hexHours + ":" + hexMinutes + ":" + hexSeconds
-  var hexBackground = document.querySelector(".container");
-
-  document
-    .querySelector("#clock")
-    .addEventListener("mouseenter", function() {
-      hexBackground.style.background =
-      "#" + hexHours + hexMinutes + hexSeconds;
-    document.querySelector("#clock").innerHTML = hexHours + ":" + hexMinutes + ":" + hexSeconds;
-
-    document.querySelector("#clock")
-      .addEventListener("mouseleave", function() {
-        hexBackground.style.background = "#66A8A1";
-        document.querySelector("#clock").innerHTML = formattedCurrentTime;
-
-      })
-  });
-
-
-  var formattedCurrentTime = padNumber(hours) + ":" +
+  const formattedCurrentTime = padNumber(hours) + ":" +
     padNumber(minutes) + ":" +
     padNumber(seconds);
   document.querySelector("#clock").innerHTML = formattedCurrentTime;
-  // document.querySelector("#clock").innerHTML = hexTime;
   updateTimerBar(seconds);
+
 }, 1000);
 
+let date = new Date();
+let hours = date.getHours();
+let minutes = date.getMinutes();
+let seconds = date.getSeconds();
+//
+let formattedCurrentTime = padNumber(hours) + ":" +
+  padNumber(minutes) + ":" +
+  padNumber(seconds);
+document.querySelector("#clock").innerHTML = formattedCurrentTime;
+updateTimerBar(seconds);
+
+const hexHours = padNumber(hours.toString(16));
+const hexMinutes = padNumber(minutes.toString(16));
+const hexSeconds = padNumber(seconds.toString(16));
+
+const hexTime = hexHours + ":" + hexMinutes + ":" + hexSeconds;
+const hexBackground = document.querySelector(".container");
+const hexTimeColorCode = "#" + hexHours + hexMinutes + hexSeconds;
+
+
+
+document
+  .querySelector("#clock")
+  .addEventListener("mouseover", function() {
+    hexBackground.style.background = hexTimeColorCode;
+  });
+document
+  .querySelector("#clock")
+  .addEventListener("mouseleave", function() {
+    hexBackground.style.background = "#66A8A1";
+    document.querySelector("#clock").innerHTML = formattedCurrentTime;
+  });
+  
+document
+  .querySelector("#clock")
+  .addEventListener("mouseover", function() {
+    document.querySelector("#clock").innerHTML = hexTime;
+  });
+document
+  .querySelector("#clock")
+  .addEventListener("mouseleave", function() {
+    document.querySelector("#clock").innerHTML = formattedCurrentTime;
+  });
 
 function padNumber(value) {
   if (value.toString().length === 1) {
@@ -43,13 +63,6 @@ function padNumber(value) {
   return value;
 }
 
-var date = new Date();
-var hours = date.getHours();
-var minutes = date.getMinutes();
-var seconds = date.getSeconds();
-var hours = date.getHours();
-console.log(date.getSeconds());
-console.log(date.getHours());
 
 
 function updateTimerBar(seconds) {
